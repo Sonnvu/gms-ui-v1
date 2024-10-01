@@ -5,7 +5,7 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<DashBoard />} />
+        <Route path="/gms-ui-v1" element={<DashBoard />} />
         
       </Routes>
     </BrowserRouter>
