@@ -1,5 +1,6 @@
 import React from 'react'
 import DemoLineChart from '../../../utils/chart/DemoLineChart'
+import SoilTempChart from '../../../utils/chart/dashboard/SoilTempChart'
 
 export default function TempModule() {
   return (
@@ -13,7 +14,7 @@ export default function TempModule() {
             </h1>
         </div>
         <div className='relative h-full p-5'>
-            <DemoLineChart />
+            <SoilTempChart />
         </div>
     </div>
   )

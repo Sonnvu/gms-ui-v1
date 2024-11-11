@@ -1,5 +1,6 @@
 import React from 'react'
 import DemoLineChart from '../../../utils/chart/DemoLineChart'
+import SoilMoistureChart from '../../../utils/chart/dashboard/SoilMoistureChart'
 
 export default function SoilMoistureModule() {
   return (
@@ -8,12 +9,12 @@ export default function SoilMoistureModule() {
             <h1 className='text-xl font-poppins font-semibold text-gray-600'>
                 Soil Moisture Module
             </h1>
-            <h1 className='text-md font-poppins font-semibold p-1 px-3 rounded-md bg-red-50 text-red-400'>
-                Disconnected
+            <h1 className='text-md font-poppins font-semibold p-1 px-3 rounded-md bg-green-50 text-green-400'>
+                Connected
             </h1>
         </div>
         <div className='h-full p-5'>
-            <DemoLineChart />
+            <SoilMoistureChart />
         </div>
     </div>
   )

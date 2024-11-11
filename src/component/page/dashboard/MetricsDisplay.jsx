@@ -1,8 +1,8 @@
 import React from 'react'
-import TempModule from './module/TempModule'    
-import SoilPHModule from './module/SoilPHModule'
-import SoilMoistureModule from './module/SoilMoistureModule'
-import LightModule from './module/LightModule'
+import TempModule from './sensors/TempModule'    
+import SoilPHModule from './sensors/SoilPHModule'
+import SoilMoistureModule from './sensors/SoilMoistureModule'
+import LightModule from './sensors/LightModule'
 
 export default function MetricsDisplay() {
   return (

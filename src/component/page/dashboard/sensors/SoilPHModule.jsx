@@ -8,8 +8,8 @@ export default function SoilPHModule() {
             <h1 className='text-xl font-poppins font-semibold text-gray-600'>
                 Soil pH Module
             </h1>
-            <h1 className='text-md font-poppins font-semibold p-1 px-3 rounded-md bg-yellow-50 text-yellow-500'>
-                Connecting
+            <h1 className='text-md font-poppins font-semibold p-1 px-3 rounded-md bg-red-50 text-red-500'>
+                Not Implemented
             </h1>
         </div>
         <div className='h-full p-5'>

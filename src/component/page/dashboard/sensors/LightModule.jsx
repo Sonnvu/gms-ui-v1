@@ -1,5 +1,6 @@
 import React from 'react'
 import DemoLineChart from '../../../utils/chart/DemoLineChart'
+import LightReadingsChart from '../../../utils/chart/dashboard/LightReadingChart'
 
 export default function LightModule() {
   return (
@@ -13,7 +14,7 @@ export default function LightModule() {
             </h1>
         </div>
         <div className='h-full p-5'>
-            <DemoLineChart />
+            <LightReadingsChart />
         </div>
     </div>
   )
