@@ -43,17 +43,17 @@ export default class SoilTempChart extends React.Component {
         labels: timestamps,
         datasets: [
             {
-            label: 'Time Stamps',
-            data: readings,
-            fill: {
-                target: 'origin',
-                above: 'rgba(138, 255, 165,0.2)',   // Gradient area color
-            },
-            tension: 0.2,
-            borderColor: 'rgb(79, 227, 147)',   // Line color
-            borderWidth: 2,
-            pointBackgroundColor: 'rgb(166, 255, 207)', // Point color
-            pointHoverBorderColor: 'rgb(209, 255, 230)', 
+                label: 'Time Stamps',
+                data: readings,
+                fill: {
+                    target: 'origin',
+                    above: 'rgba(161, 255, 239,0.2)',   // Gradient area color
+                },
+                tension: 0.2,
+                borderColor: 'rgb(79, 227, 202)',   // Line color
+                borderWidth: 2,
+                pointBackgroundColor: 'rgb(150, 255, 237)', // Point color
+                pointHoverBorderColor: 'rgb(31, 224, 191)',        // Hover point border color
             },
             {
                 label: 'Air Temperature',
