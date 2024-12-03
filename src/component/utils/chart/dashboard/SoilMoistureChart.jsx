@@ -10,14 +10,25 @@ export default class SoilMoistureChart extends React.Component {
     };
 
     componentDidMount() {
-        axios.get('http://3.133.97.0:8080/api_v1/sensor/soil/moisture/all')
-        .then(res => {
-            const soilMoistureReadings = res.data;
-            this.setState({ soilMoistureReadings }, this.prepareChartData);
-        })
-        .catch(error => {
-            console.error('Error fetching data:', error);
-        });
+      this.fetchData(); // Fetch initial data
+      this.interval = setInterval(this.fetchData, 1000); 
+    }
+
+    componentWillUnmount() {
+      // Clear the interval when the component is unmounted to avoid memory leaks
+      clearInterval(this.interval);
+    }
+
+    fetchData = () => {
+      const {moduleId} = this.props;
+      axios.get(`http://3.133.97.0:8080/api_v1/sensor/soil/moisture/all/${moduleId}`)
+      .then(res => {
+          const soilMoistureReadings = res.data;
+          this.setState({ soilMoistureReadings }, this.prepareChartData);
+      })
+      .catch(error => {
+          console.error('Error fetching data:', error);
+      });
     }
 
     prepareChartData = () => {

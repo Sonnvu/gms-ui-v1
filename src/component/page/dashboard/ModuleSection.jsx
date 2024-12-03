@@ -3,7 +3,7 @@ import React from 'react'
 export default function ModuleSection() {
   return (
     <div className="bg-slate-50 py-10">
-        <div className="relative flex flex-row bg-white rounded-3xl mx-52">
+        <div className="relative flex flex-row bg-white rounded-3xl mx-32">
             <div className="flex flex-col ml-24 items-center p-10  space-y-5">
                 <h1 className="flex text-3xl font-poppin font-bold tracking-wide text-gray-700 ">Garden 1 Display</h1>
                 <div className="relative flex items-center space-x-2 bg-white rounded-lg">

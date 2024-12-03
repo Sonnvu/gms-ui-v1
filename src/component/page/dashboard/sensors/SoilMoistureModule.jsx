@@ -1,8 +1,7 @@
 import React from 'react'
-import DemoLineChart from '../../../utils/chart/DemoLineChart'
 import SoilMoistureChart from '../../../utils/chart/dashboard/SoilMoistureChart'
 
-export default function SoilMoistureModule() {
+export default function SoilMoistureModule({moduleId}) {
   return (
     <div className='h-full'>
         <div className='relative pl-5 flex items-center space-x-5'>
@@ -14,7 +13,7 @@ export default function SoilMoistureModule() {
             </h1>
         </div>
         <div className='h-full p-5'>
-            <SoilMoistureChart />
+            <SoilMoistureChart moduleId={moduleId}/>
         </div>
     </div>
   )

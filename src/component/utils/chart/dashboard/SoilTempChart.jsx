@@ -11,7 +11,19 @@ export default class SoilTempChart extends React.Component {
     };
 
     componentDidMount() {
-        axios.get('http://3.133.97.0:8080/api_v1/sensor/temp/soil/all')
+        this.fetchData(); // Fetch initial data
+        this.interval = setInterval(this.fetchData, 1000); 
+    }
+
+    componentWillUnmount() {
+        // Clear the interval when the component is unmounted to avoid memory leaks
+        clearInterval(this.interval);
+    }
+
+    fetchData = () => {
+        const {moduleId} = this.props;
+
+        axios.get(`http://3.133.97.0:8080/api_v1/sensor/temp/soil/all/${moduleId}`)
         .then(res => {
             const soilTempReadings = res.data;
             this.setState({ soilTempReadings }, this.prepareChartData);
@@ -20,7 +32,7 @@ export default class SoilTempChart extends React.Component {
             console.error('Error fetching data:', error);
         });
 
-        axios.get('http://3.133.97.0:8080/api_v1/sensor/temp/air/all')
+        axios.get(`http://3.133.97.0:8080/api_v1/sensor/temp/air/all/${moduleId}`)
         .then(res => {
             const airTempReadings = res.data;
             this.setState({ airTempReadings }, this.prepareChartData);
@@ -43,7 +55,7 @@ export default class SoilTempChart extends React.Component {
         labels: timestamps,
         datasets: [
             {
-                label: 'Time Stamps',
+                label: 'Soil Temperature',
                 data: readings,
                 fill: {
                     target: 'origin',

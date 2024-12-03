@@ -10,15 +10,27 @@ export default class LightReadingsChart extends React.Component {
     };
 
     componentDidMount() {
-        axios.get('http://3.133.97.0:8080/api_v1/sensor/light/all')
-        .then(res => {
-            const lightReadings = res.data;
-            this.setState({ lightReadings }, this.prepareChartData);
-        })
-        .catch(error => {
-            console.error('Error fetching data:', error);
-        });
+      this.fetchData(); // Fetch initial data
+      this.interval = setInterval(this.fetchData, 1000); 
     }
+
+    componentWillUnmount() {
+      // Clear the interval when the component is unmounted to avoid memory leaks
+      clearInterval(this.interval);
+    }
+
+    fetchData = () => {
+      const {moduleId} = this.props;
+
+      axios.get(`http://3.133.97.0:8080/api_v1/sensor/light/all/${moduleId}`)
+      .then(res => {
+          const lightReadings = res.data;
+          this.setState({ lightReadings }, this.prepareChartData);
+      })
+      .catch(error => {
+          console.error('Error fetching data:', error);
+      });
+    };
 
     prepareChartData = () => {
         const { lightReadings } = this.state;
